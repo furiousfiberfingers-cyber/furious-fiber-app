@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Furious Fiber Fingers LLC - Production & Billing Portal</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 font-sans text-gray-800 min-h-screen">
+
+  <header class="bg-blue-900 text-white p-4 shadow-md">
+    <div class="max-w-6xl mx-auto flex justify-between items-center">
+      <h1 class="text-2xl font-bold tracking-wide">Furious Fiber Fingers LLC</h1>
+      <span class="text-sm bg-blue-800 px-3 py-1 rounded-full border border-blue-700">Daily Production & Weekly Billing</span>
+    </div>
+  </header>
+
+  <div class="max-w-6xl mx-auto p-4 md:p-6 grid grid-cols-1 lg:grid-cols-3 gap-6">
+
+    <div class="lg:col-span-2 bg-white rounded-lg shadow p-6">
+      <h2 class="text-xl font-bold mb-4 text-blue-900 border-b pb-2">Daily Splicing Production Form</h2>
+      
+      <form id="dailyForm" class="space-y-4">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div>
+            <label class="block text-xs font-semibold uppercase text-gray-600 mb-1">Date Spliced</label>
+            <input type="date" id="dateSpliced" required class="w-full border rounded p-2 focus:ring-2 focus:ring-blue-500">
+          </div>
+          <div>
+            <label class="block text-xs font-semibold uppercase text-gray-600 mb-1">Spliced By (Employee / Contractor)</label>
+            <input type="text" id="splicedBy" placeholder="e.g. Leon / Sean" required class="w-full border rounded p-2 focus:ring-2 focus:ring-blue-500">
+          </div>
+          <div>
+            <label class="block text-xs font-semibold uppercase text-gray-600 mb-1">Client Name</label>
+            <input type="text" id="client" value="TBA CONSTRUCTION" required class="w-full border rounded p-2 focus:ring-2 focus:ring-blue-500">
+          </div>
+          <div>
+            <label class="block text-xs font-semibold uppercase text-gray-600 mb-1">Project # / Location</label>
+            <input type="text" id="project" placeholder="e.g. FARMVILLE" required class="w-full border rounded p-2 focus:ring-2 focus:ring-blue-500">
+          </div>
+          <div>
+            <label class="block text-xs font-semibold uppercase text-gray-600 mb-1">Serving Area & Route</label>
+            <input type="text" id="servingArea" placeholder="Route info" class="w-full border rounded p-2 focus:ring-2 focus:ring-blue-500">
+          </div>
+          <div>
+            <label class="block text-xs font-semibold uppercase text-gray-600 mb-1">Ped / HH # / Sub Address</label>
+            <input type="text" id="pedAddress" placeholder="Address or Ped #" class="w-full border rounded p-2 focus:ring-2 focus:ring-blue-500">
+          </div>
+          <div>
+            <label class="block text-xs font-semibold uppercase text-gray-600 mb-1">Cable Sizes</label>
+            <input type="text" id="cableSizes" placeholder="e.g. 48, 144" class="w-full border rounded p-2 focus:ring-2 focus:ring-blue-500">
+          </div>
+          <div>
+            <label class="block text-xs font-semibold uppercase text-gray-600 mb-1">Total Count Spliced</label>
+            <input type="number" id="countSpliced" min="0" value="0" class="w-full border rounded p-2 focus:ring-2 focus:ring-blue-500">
+          </div>
+        </div>
+
+        <h3 class="text-md font-bold text-gray-700 mt-6 border-b pb-1">Task Quantities</h3>
+        <div class="grid grid-cols-2 md:grid-cols-3 gap-3">
+          <div>
+            <label class="block text-xs text-gray-600">Fusion Splice ($12)</label>
+            <input type="number" id="fusionSplice" min="0" value="0" class="task-input w-full border rounded p-1.5">
+          </div>
+          <div>
+            <label class="block text-xs text-gray-600">Partial Ribbon ($12)</label>
+            <input type="number" id="partialRibbon" min="0" value="0" class="task-input w-full border rounded p-1.5">
+          </div>
+          <div>
+            <label class="block text-xs text-gray-600">Ribbon Splice ($100)</label>
+            <input type="number" id="ribbonSplice" min="0" value="0" class="task-input w-full border rounded p-1.5">
+          </div>
+          <div>
+            <label class="block text-xs text-gray-600">Setup / Teardown ($150)</label>
+            <input type="number" id="setupTeardown" min="0" value="0" class="task-input w-full border rounded p-1.5">
+          </div>
+          <div>
+            <label class="block text-xs text-gray-600">Splice DTAP ($150)</label>
+            <input type="number" id="spliceDtap" min="0" value="0" class="task-input w-full border rounded p-1.5">
+          </div>
+          <div>
+            <label class="block text-xs text-gray-600">Splice Terminal ($120)</label>
+            <input type="number" id="spliceTerminal" min="0" value="0" class="task-input w-full border rounded p-1.5">
+          </div>
+          <div>
+            <label class="block text-xs text-gray-600">Test DTAP ($20)</label>
+            <input type="number" id="testDtap" min="0" value="0" class="task-input w-full border rounded p-1.5">
+          </div>
+          <div>
+            <label class="block text-xs text-gray-600">Test Evolve ($8)</label>
+            <input type="number" id="testEvolve" min="0" value="0" class="task-input w-full border rounded p-1.5">
+          </div>
+          <div>
+            <label class="block text-xs text-gray-600">Test Retrip-L</label>
+            <input type="number" id="testRetripL" min="0" value="0" class="task-input w-full border rounded p-1.5">
+          </div>
+        </div>
+
+        <div>
+          <label class="block text-xs font-semibold uppercase text-gray-600 mb-1">Additional Notes</label>
+          <textarea id="notes" rows="2" class="w-full border rounded p-2 focus:ring-2 focus:ring-blue-500"></textarea>
+        </div>
+
+        <button type="submit" class="w-full bg-blue-900 text-white py-2.5 rounded font-bold hover:bg-blue-800 transition">
+          Submit Daily Production Log
+        </button>
+      </form>
+    </div>
+
+    <div class="bg-white rounded-lg shadow p-6 flex flex-col justify-between">
+      <div>
+        <h2 class="text-xl font-bold mb-4 text-blue-900 border-b pb-2">Weekly Billing Summary</h2>
+        <div id="weeklySummary" class="space-y-2 text-sm">
+          <p class="text-gray-500">Loading weekly statistics...</p>
+        </div>
+      </div>
+
+      <div class="mt-6 border-t pt-4 space-y-2">
+        <button onclick="triggerSaturdayReport()" class="w-full bg-green-700 text-white py-2 rounded font-semibold hover:bg-green-600 transition">
+          Send Weekly Billing Email Now
+        </button>
+        <p class="text-xs text-center text-gray-500">Automated copies are sent every Saturday at 11:59 PM.</p>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    document.getElementById('dateSpliced').valueAsDate = new Date();
+
+    document.getElementById('dailyForm').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const payload = {
+        dateSpliced: document.getElementById('dateSpliced').value,
+        splicedBy: document.getElementById('splicedBy').value,
+        client: document.getElementById('client').value,
+        project: document.getElementById('project').value,
+        servingArea: document.getElementById('servingArea').value,
+        pedAddress: document.getElementById('pedAddress').value,
+        cableSizes: document.getElementById('cableSizes').value,
+        countSpliced: Number(document.getElementById('countSpliced').value),
+        fusionSplice: Number(document.getElementById('fusionSplice').value),
+        partialRibbon: Number(document.getElementById('partialRibbon').value),
+        ribbonSplice: Number(document.getElementById('ribbonSplice').value),
+        setupTeardown: Number(document.getElementById('setupTeardown').value),
+        spliceDtap: Number(document.getElementById('spliceDtap').value),
+        spliceTerminal: Number(document.getElementById('spliceTerminal').value),
+        testDtap: Number(document.getElementById('testDtap').value),
+        testEvolve: Number(document.getElementById('testEvolve').value),
+        testRetripL: Number(document.getElementById('testRetripL').value),
+        notes: document.getElementById('notes').value,
+      };
+
+      const res = await fetch('/api/daily-log', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+      });
+
+      if (res.ok) {
+        alert('Daily Log submitted successfully!');
+        loadWeeklySummary();
+      }
+    });
+
+    async function loadWeeklySummary() {
+      const res = await fetch('/api/weekly-summary');
+      const data = await res.json();
+      
+      let html = `
+        <div class="flex justify-between font-bold text-gray-700"><span>Total Billing Due:</span> <span class="text-green-700">$${data.totalDue.toFixed(2)}</span></div>
+        <hr class="my-2">
+        <div class="space-y-1 text-xs text-gray-600">
+          <div class="flex justify-between"><span>Fusion Splices ($12):</span> <span>${data.totals.fusionSplice}</span></div>
+          <div class="flex justify-between"><span>Partial Ribbon ($12):</span> <span>${data.totals.partialRibbon}</span></div>
+          <div class="flex justify-between"><span>Ribbon Splice ($100):</span> <span>${data.totals.ribbonSplice}</span></div>
+          <div class="flex justify-between"><span>Setup / Teardown ($150):</span> <span>${data.totals.setupTeardown}</span></div>
+          <div class="flex justify-between"><span>Splice DTAP ($150):</span> <span>${data.totals.spliceDtap}</span></div>
+          <div class="flex justify-between"><span>Splice Terminal ($120):</span> <span>${data.totals.spliceTerminal}</span></div>
+          <div class="flex justify-between"><span>Test DTAP ($20):</span> <span>${data.totals.testDtap}</span></div>
+          <div class="flex justify-between"><span>Test Evolve ($8):</span> <span>${data.totals.testEvolve}</span></div>
+        </div>
+      `;
+      document.getElementById('weeklySummary').innerHTML = html;
+    }
+
+    async function triggerSaturdayReport() {
+      const res = await fetch('/api/send-weekly-report', { method: 'POST' });
+      if (res.ok) alert('Saturday Billing Report sent to Furious Fiber Fingers!');
+    }
+
+    loadWeeklySummary();
+  </script>
+</body>
+</html>
